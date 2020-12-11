@@ -13,3 +13,37 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery-item {
+  width: 20%;
+}
+.gallery-item:not(:nth-child(4n)) {
+  margin-right: 20px;
+}
+.photo-card {
+  width: 100%;
+  height: 100%;
+}
+.photo-card img {
+  margin-bottom: auto;
+}
+.stats {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: auto;
+  height: max-content;
+}
+/* .stats-item {
+  margin: 0 auto;
+} */

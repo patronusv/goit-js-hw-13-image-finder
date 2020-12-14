@@ -1,4 +1,6 @@
 import './styles.css';
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
 import debounce from 'lodash/debounce.js';
 import { refs } from './refs/refs.js';
 import imageService from './api/apiService.js';
@@ -17,7 +19,7 @@ const fetchImages = e => {
       })
       .then(() => {
         window.scrollBy({
-          top: document.documentElement.offsetHeight,
+          top: document.documentElement.clientHeight,
           behavior: 'smooth',
         });
       });
@@ -43,3 +45,12 @@ refs.buttonLoad.addEventListener('click', e => {
   fetchImages(e);
   buttonDisable();
 });
+const instance = basicLightbox.create(refs.modalTemplate);
+const openModal = e => {
+  if (e.target.nodeName !== 'IMG') return;
+  instance.show();
+  console.log(e.target);
+  const modalImage = document.querySelector('.modal-image');
+  modalImage.src = e.target.dataset.source;
+};
+refs.gallery.addEventListener('click', openModal);

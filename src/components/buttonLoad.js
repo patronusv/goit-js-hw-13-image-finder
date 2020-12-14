@@ -12,3 +12,8 @@ export const buttonDisable = () => {
   refs.buttonLoad.classList.add('disabled');
   refs.buttonLoad.textContent = 'loading ...';
 };
+
+export const buttonHide = () => {
+  refs.buttonLoad.disabled = true;
+  refs.buttonLoad.classList.add('is-hidden');
+};

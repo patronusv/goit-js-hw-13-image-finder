@@ -6,8 +6,6 @@ export default {
   _query: '',
 
   fetchImages() {
-    // this.query = e.target.value;
-
     return fetch(
       `${this.baseURL}${this.query}&page=${this.page}&per_page=12&key=${apiKey}`,
     )

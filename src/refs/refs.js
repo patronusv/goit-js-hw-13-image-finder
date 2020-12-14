@@ -5,5 +5,4 @@ export const refs = {
   buttonLoad: document.querySelector('.button-load'),
   gallery: document.querySelector('.gallery'),
   modalTemplate: document.querySelector('#modal'),
-  // modalImage: document.querySelector('.modal-image'),
 };
